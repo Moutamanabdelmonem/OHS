@@ -123,7 +123,7 @@ if(isset($_POST["sbbtn"]))
 																<input type="date" name="tdate" id="tdate" value="" required="" placeholder="Work To Date" />
 															</div>
 															<!-- Break -->
-															<div class="col-12" id="vlonteerX" style="display: <?php echo ($_SESSION["Vlonteer"]!="Vlonteer") ? 'block' : 'none'; ?>">
+															<div class="col-12" id="vlonteerX" style="display: <?php echo (($_SESSION["vlonteer"]="Vlonteer") ? 'block' : 'none'); ?>">
 																	<div class="col-3 col-12-small">
 																				<label>Vlonteer :</label>
 																			</div>
@@ -136,7 +136,6 @@ if(isset($_POST["sbbtn"]))
 																				<label for="non-vlonteer">Just Normal</label>
 																			</div>
 																		</div>
-																}
 															
 														
 															
