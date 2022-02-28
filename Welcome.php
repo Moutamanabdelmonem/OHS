@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION["utype"]) || $_SESSION["utype"]!="Consumer")
 {
-header("location:Signin.php");
+header("location:view_request.php");
 }
 $con=mysqli_connect("localhost","root","","ServiceDb");
 	if(mysqli_connect_errno()>0)
