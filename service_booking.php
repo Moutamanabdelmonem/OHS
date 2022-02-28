@@ -123,7 +123,35 @@ if(isset($_POST["sbbtn"]))
 																<input type="date" name="tdate" id="tdate" value="" required="" placeholder="Work To Date" />
 															</div>
 															<!-- Break -->
-															<div class="col-12" id="vlonteerX" style="display: <?php echo (($_SESSION["vlonteer"]="Vlonteer") ? 'block' : 'none'); ?>">
+															<?php
+																$con=mysqli_connect("localhost","root","","ServiceDb");
+																if(mysqli_connect_errno()>0)
+																{
+																	echo mysqli_connect_error();
+																	exit();
+																}
+																$eid=$_REQUEST["eid"];
+																$pname=$_REQUEST["pname"];
+																$sid=$_REQUEST["sid"];
+																$query="select vlonteer from service_table, user_table where provider_emailid=? and service_id=? and provider_name=? and Register_as='Provider'";
+																$stmt=$con->prepare($query);
+																$stmt->bind_param("sss",$eid,$sid,$pname);
+																$stmt->execute();
+																$stmt->store_result();
+																if($stmt->num_rows>0)
+																{
+																	$stmt->bind_result($voln);
+																	$stmt->fetch();
+																}
+																if ($voln == "Vlonteer") {
+																	echo '<div class="col-12" id="vlonteerX" style="display:block">';
+																	echo $voln;
+																	echo $pname;
+																}else {
+																	echo '<div class="col-12" id="vlonteerX" style="display:none">';
+																}
+																$con->close();
+															?>
 																	<div class="col-3 col-12-small">
 																				<label>Vlonteer :</label>
 																			</div>
