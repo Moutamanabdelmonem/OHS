@@ -194,7 +194,7 @@ if(isset($_POST["sbbtn"]))
 																<label>Country :</label>
 																<select name="country" id="country" required="">
 																	<option value="">- Select Country -</option>
-																	<option value="India">India</option>
+																	<option value="Sudan">Sudan</option>
 																	
 																</select>
 															</div>
@@ -204,7 +204,7 @@ if(isset($_POST["sbbtn"]))
 																<label>State :</label>
 																<select name="state" id="state" required="">
 																	<option value="">- Select State -</option>
-																	<option value="Gujarat">Gujarat</option>
+																	<option value="Khartom">Khartom</option>
 																	
 																</select>
 															</div>
@@ -214,7 +214,9 @@ if(isset($_POST["sbbtn"]))
 																<label>City :</label>
 																<select name="city" id="city" required="">
 																	<option value="">- Select City -</option>
-																	<option value="Dahod">Dahod</option>
+																	<option value="Bahry">Bahry</option>
+																	<option value="Omdurman">Omdurman</option>
+																	<option value="Khartoum">Khartoum</option>
 																	
 																</select>
 															</div>

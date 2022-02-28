@@ -35,17 +35,6 @@
 </ul>
 </nav>
 	<!-- Section -->
-<section>
-	<header class="major">
-		<h2>Get in touch</h2>
-	</header>
-	
-	<ul class="contact">
-		<li class="icon solid fa-envelope"><a href="mailto:meetigandhi002@gmail.com">meetigandhi002@gmail.com</a></li>
-		<li class="icon solid fa-phone">+91 81418 65603</li>
-		<li class="icon solid fa-home">302/P.Maneklal (Tirth) Complex,<br />Jalvihar Society,<br />Station Road,<br />Dahod-389151</li>
-	</ul>
-</section>
 
 <!-- Footer -->
 <footer id="footer">
