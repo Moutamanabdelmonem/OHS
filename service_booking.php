@@ -21,12 +21,12 @@ if(isset($_POST["sbbtn"]))
 	$tdate=$_POST["tdate"];
 	$vlonteer=$_POST["vlonteer"];
 	$rdate=date("Y-m-d");
-	$rtime=date("h:i:s a");
+	$rtime=date("h:i:s");
 	$status="Pending";
 	
 	$query="insert into service_request(consumer_emailid,provider_emailid,service_id,fdate,tdate,request_date,request_time,status,vlonteer) values(?,?,?,?,?,?,?,?,?)";
 	$stmt=$con->prepare($query);
-	$stmt->bind_param("ssissssss",$emailid,$pemailid,$sid,$fdate,$tdate,$rdate,$rtime,$status,$vlonteer);
+	$stmt->bind_param("sssssssss",$emailid,$pemailid,$sid,$fdate,$tdate,$rdate,$rtime,$status,$vlonteer);
 	$stmt->execute();
 	$stmt->store_result();
 	if($stmt->affected_rows>0)
@@ -41,8 +41,8 @@ if(isset($_POST["sbbtn"]))
 	}
 	else
 	{
-		$msg="Request is not Sent...";
-		
+		$msg="Request is not Sent..."."<br>";
+		echo $con->error;
 	}
 	$con->close();
  }
@@ -130,10 +130,15 @@ if(isset($_POST["sbbtn"]))
 																	echo mysqli_connect_error();
 																	exit();
 																}
-																$eid=$_REQUEST["eid"];
+																if (isset($_REQUEST["eid"])) {
+																	$e11id=$_REQUEST["eid"];
+																}
+																else {
+																	$e11id=NULL;
+																}
 																$query1="select vlonteer from  user_table where email_id=? and Register_as='Provider'";
 																$stmt1=$con1->prepare($query1);
-																$stmt1->bind_param("s",$eid);
+																$stmt1->bind_param("s",$e11id);
 																$stmt1->execute();
 																$stmt1->store_result();
 																if($stmt1->num_rows>0)
@@ -145,6 +150,9 @@ if(isset($_POST["sbbtn"]))
 																	}else {
 																		echo '<div class="col-12" id="vlonteerX" style="display:none">';
 																	}
+																}
+																else {
+																	echo '<div class="col-12" id="vlonteerX" style="display:none">';
 																}
 																$con1->close();
 															?>
@@ -189,67 +197,10 @@ if(isset($_POST["sbbtn"]))
 					</div>
 
 				<!-- Sidebar -->
-					<div id="sidebar">
+				<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<center>
-									<img src="images/noimg.png" width="150px" height="150px" style="border-radius: 75px;border:1px solid white;"><br>
-									<a href="" onclick="window.open('picupload.html', 'Uploader', 'width=500,height=300,left=100,top=100,scrollbars=no,fullscreen=no,resizable=no');">Edit Profile Picture</a><br><br>
-									</center>
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="welcome.html">Homepage</a></li>
-										<li>
-											<span class="opener">Household Services</span>
-											<ul>
-												<li><a href="#">Electrician</a></li>
-												<li><a href="#">Plumber</a></li>
-												<li><a href="#">Carpenter</a></li>
-												<li><a href="#">Water Purifier</a></li>
-												<li><a href="#">Painter</a></li>
-												
-												<li><a href="#">Appliance Repair</a></li>
-												<li><a href="#">House Cleaning</a></li>
-												<li><a href="#">Interior Design</a></li>
-												<li><a href="#">Architecturer</a></li>
-												<li><a href="#">POP Design</a></li>
-												
-											</ul>
-										</li>
-										<li><a href="Consumer_Cpass.html">My Account</a></li>
-										<li><a href="">My Services</a></li>
-										<li><a href="">Signout</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="mailto:meetigandhi002@gmail.com">meetigandhi002@gmail.com</a></li>
-										<li class="icon solid fa-phone">+91 81418 65603</li>
-										<li class="icon solid fa-home">302/P.Maneklal (Tirth) Complex,<br />Jalvihar Society,<br />Station Road,<br />Dahod-389151</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; HouseHold Service Portal. All rights reserved. Design By: <a href="mailto:meetigandhi002@gmail.com">Gandhi Meeti S</a>.</p>
-								</footer>
+							<?php include "cmenu.php"; ?>
 
 						</div>
 					</div>
