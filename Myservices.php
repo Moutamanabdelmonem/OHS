@@ -101,14 +101,14 @@ $con=mysqli_connect("localhost","root","","ServiceDb");
 															$todate=$_POST["tdate"];
 															$sts=$_POST["rp1"];
 														$emailid=$_SESSION["emailid"];
-														$query1="select provider_name,address,city,state,country,pincode,fdate,tdate,service_name,request_date,request_time,status from service_table,service_request where service_table.provider_emailid=service_request.provider_emailid and service_table.service_id=service_request.service_id and consumer_emailid=? and request_date>=? and request_date<=? and status=?";
+														$query1="select provider_name,address,city,state,country,pincode,fdate,tdate,service_name,request_date,request_time,status, vlonteer from service_table,service_request where service_table.provider_emailid=service_request.provider_emailid and service_table.service_id=service_request.service_id and consumer_emailid=? and request_date>=? and request_date<=? and status=?";
 														$stmt1=$con->prepare($query1);
 														$stmt1->bind_param("ssss",$emailid,$frdate,$todate,$sts);
 														$stmt1->execute();
 														$stmt1->store_result();
 														if($stmt1->num_rows>0)
 														{
-															$stmt1->bind_result($pname,$address,$city,$state,$country,$pcode,$fdate,$tdate,$sname,$rdate,$rtime,$status);
+															$stmt1->bind_result($pname,$address,$city,$state,$country,$pcode,$fdate,$tdate,$sname,$rdate,$rtime,$status, $vlonteer);
 															echo '<table class="alt">
 															<thead>
 																<tr>
@@ -119,6 +119,7 @@ $con=mysqli_connect("localhost","root","","ServiceDb");
 																	<th>Request For</th>
 																	<th>Request Date & Time</th>
 																	<th>Status</th>
+																	<th>Vlonteer</th>
 																</tr>
 															</thead>
 															<tbody>';
@@ -133,6 +134,7 @@ $con=mysqli_connect("localhost","root","","ServiceDb");
 																	<td>'.$sname.'</td>
 																	<td>'.$rdate.' '.$rtime.'</td>
 																	<td>'.$status.'</td>
+																	<td>'.$vlonteer.'</td>
 																	</tr>';
 															 }
 															echo '</tbody>
