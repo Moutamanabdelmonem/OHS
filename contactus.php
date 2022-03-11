@@ -43,7 +43,7 @@ $msg='Message is Sent!..';
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -59,12 +59,12 @@ $msg='Message is Sent!..';
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.php" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="index.php" class="logo"><strong>Simple Provider</strong></a>
 									
 								</header>
 
 							<!-- Banner -->
-								<section>
+							<section>
 									<header class="major">
 										<h2>Contact Us</h2>
 									</header>
@@ -72,14 +72,14 @@ $msg='Message is Sent!..';
 											<div class="col-6 col-12-medium">
 												<section>
 												<ul class="contact">
-													<li class="icon solid fa-envelope"><a href="mailto:meetigandhi002@gmail.com">meetigandhi002@gmail.com</a></li>
-													<li class="icon solid fa-phone">+91 81418 65603</li>
-													<li class="icon solid fa-home">302/P.Maneklal (Tirth) Complex,<br />Jalvihar Society,<br />Station Road,<br />Dahod-389151</li>
+													<li class="icon solid fa-envelope">Simpleprovider@gmail.com</li>
+													<li class="icon solid fa-phone">+249 128696611</li>
+													<li class="icon solid fa-home">Khartoum - Sudan - 174 <br />Ebid Khatim  street Road   ,<br />Al- balabil station</li>
 												</ul>
 												</section>
 											</div>
 											<div class="col-6 col-12-medium">
-													<form method="post" action="">
+													<!-- <form method="post" action="">
 														<div class="row gtr-uniform">
 															<div class="col-12">
 																<label><h3 style="color:green"><?php isset($msg)?print $msg:print "";?><h3></label>
@@ -88,22 +88,20 @@ $msg='Message is Sent!..';
 																<label>Email Id :</label>
 																<input type="email" name="emailid" id="emailid" value="" required="" placeholder="Email id" />
 															</div>
-															<!-- Break -->
+															
 														
 															<div class="col-12">
 																<label>Name :</label>
 																<input type="text" name="nm" id="nm" value="" required="" placeholder="Name" />
 															</div>
-															<!-- Break -->
-															<!-- Break -->
 
 															<div class="col-12">
 																<label>Message :</label>
 																<textarea name="msg" id="msg" placeholder="Enter Your Message" rows="5"></textarea>
 															</div>
-															<!-- Break -->	
 															
-															<!-- Break -->
+															
+														
 															
 															<div class="col-12">
 																<ul class="actions">
@@ -114,7 +112,7 @@ $msg='Message is Sent!..';
 
 															
 														</div>
-													</form>
+													</form> -->
 
 													
 													

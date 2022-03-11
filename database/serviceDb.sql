@@ -22,7 +22,9 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `servicedb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `servicedb`;
 
+
 -- --------------------------------------------------------
+
 
 --
 -- Table structure for table `service_request`
@@ -89,7 +91,8 @@ CREATE TABLE `user_table` (
   `Email_id` varchar(100) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `Register_As` varchar(50) NOT NULL,
-  `Vlonteer` varchar(50) NOT NULL
+  `Vlonteer` varchar(50),
+  `Status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

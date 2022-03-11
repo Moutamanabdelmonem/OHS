@@ -67,7 +67,7 @@ if(isset($_POST["sbbtn"]))
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -117,26 +117,15 @@ if(isset($_POST["sbbtn"]))
 															
 														</div>
 													</form>
-
 													
-													
-
-											
-
 											</div>
 										</div>
 
 								</section>
 
-							
 						</div>
 					</div>
 
-			
-
 			</div>
-
-		
-
 	</body>
 </html>

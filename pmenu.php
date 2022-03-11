@@ -7,9 +7,9 @@
 										<h4>Welcome <?php echo $_SESSION["name"]; ?></h4>
 									<a href="" onclick="window.open('picupload.php', 'Uploader', 'width=500,height=400,left=100,top=100,scrollbars=no,fullscreen=no,resizable=no');">Edit Profile Picture</a><br><br>
 									</center>
-									<form method="post" action="#">
+									<!-- <form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
+									</form> -->
 								</section>
 
 							<!-- Menu -->
@@ -26,10 +26,19 @@
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; HouseHold Service Portal. All rights reserved. Design By: <a href="mailto:meetigandhi002@gmail.com">Gandhi Meeti S</a>.</p>
-								</footer>
+						<!-- Section -->
+	<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									
+									<ul class="contact">
+										<li class="icon solid fa-envelope">Simpleprovider@gmail.com</li>
+										<li class="icon solid fa-phone">+249 128696611</li>
+										<li class="icon solid fa-home">Khartoum - Sudan - 174 <br />Ebid Khatim  street Road   ,<br />Al- balabil station</li>
+									</ul>
+								</section>
+<!-- Footer -->
+<footer id="footer">
+	<p class="copyright">&copy; Good Working  , All the best<a href="mailto:meetigandhi002@gmail.com">Gandhi Meeti S</a>.</p>
+</footer>

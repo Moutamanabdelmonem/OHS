@@ -24,11 +24,17 @@ if(isset($_POST["sbbtn"]))
 	$ans=$_POST["ans"];
 	$emailid=$_POST["emailid"];
 	$pass=$_POST["pass"];
-	$vlonteer=$_POST["vlonteer"];
+	
 	$utype=$_POST["utype"];
 	$img=$_FILES["photo"]["tmp_name"]; 
 	$size=$_FILES["photo"]["size"];
 	$imgname=$_FILES["photo"]["name"];
+	$status= "Active";
+	if ($utype=='Consumer') {
+		$vlonteer="";
+	}else {
+		$vlonteer=$_POST["vlonteer"];
+	}
 	$imgtype=strtolower(pathinfo($imgname,PATHINFO_EXTENSION));
 	if($size>1000000)
 	{
@@ -45,9 +51,9 @@ if(isset($_POST["sbbtn"]))
 		$nimgname=$mno.".".$imgtype;
 	if (move_uploaded_file($img, "uploads/".$nimgname)) 
 	{
-    $query="insert into user_table values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query="insert into user_table values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	$stmt=$con->prepare($query);
-	$stmt->bind_param("sssssssssssssssssss",$fname,$mname,$lname,$gender,$bdate,$mno,$lno,$country,$state,$city,$address,$pcode,$ques,$ans,$nimgname,$emailid,$pass,$utype,$vlonteer);
+	$stmt->bind_param("ssssssssssssssssssss",$fname,$mname,$lname,$gender,$bdate,$mno,$lno,$country,$state,$city,$address,$pcode,$ques,$ans,$nimgname,$emailid,$pass,$utype,$vlonteer,$status);
 	$stmt->execute();
 	$stmt->store_result();
 	if($stmt->affected_rows>0)
@@ -79,7 +85,7 @@ if(isset($_POST["sbbtn"]))
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -95,7 +101,7 @@ if(isset($_POST["sbbtn"]))
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.php" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="index.php" class="logo"><strong>Simple Provider</strong></a>
 									
 								</header>
 
@@ -346,10 +352,13 @@ if(isset($_POST["sbbtn"]))
 			<script src="assets/js/main.js"></script>
 			<script>
 				document.getElementById('utype').addEventListener('change', function() {
+					var defvalue = 'None';
 					if (this.value == 'Provider') {
 						document.getElementById('vlonteerX').style.display = 'block';
 					} else {
 						document.getElementById('vlonteerX').style.display = 'none';
+						document.getElementById('vlonteerX').value = defvalue;
+						
 					}
 				});
 			</script>

@@ -45,7 +45,7 @@ if(isset($_POST["sbbtn"]))
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -61,7 +61,7 @@ if(isset($_POST["sbbtn"]))
 
 							<!-- Header -->
 								<header id="header">
-									<a href="view_request.php" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="view_request.php" class="logo"><strong>Simple Provider</strong></a>
 									
 								</header>
 

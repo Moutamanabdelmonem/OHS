@@ -9,7 +9,7 @@ session_start();
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,7 +25,7 @@ session_start();
 
 							<!-- Header -->
 								<header id="header">
-									<a href="welcome.php" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="welcome.php" class="logo"><strong>Simple Provider</strong></a>
 									
 								</header>
 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 $con = mysqli_connect("localhost", "root", "", "ServiceDb");
 if (mysqli_connect_errno() > 0) {
 	echo mysqli_connect_error();
@@ -11,12 +11,12 @@ if (isset($_POST["sbbtn"])) {
 	$pass = $_POST["pass"];
 
 	// THE NEW CODE IS HERE
-	if (($emailid == 'admin@admin') && ($pass == 'password')) {
-		header("location:admin.php");
-	}
+	// if (($emailid == 'admin@admin') && ($pass == 'password')) {
+	// 	header("location:admin.php");
+	// }
 	// END
 	
-	$utype = $_POST["utype"];
+	$utype = "Admin";
 	$query = "select first_name,middle_name,last_name,photo,mobile_no from user_table where email_id=? and password=? and Register_As=?";
 	$stmt = $con->prepare($query);
 	$stmt->bind_param("sss", $emailid, $pass, $utype);
@@ -30,11 +30,8 @@ if (isset($_POST["sbbtn"])) {
 		$_SESSION["utype"] = $utype;
 		$_SESSION["img"] = $img;
 		$_SESSION["mno"] = $mno;
-		if ($utype == "Provider") {
-			header("location:view_request.php");
-		} else {
-			header("location:Welcome.php");
-		}
+		header("location:admin.php");
+		
 	} else {
 		$msg = "Invalid Emailid or Password...";
 	}
@@ -80,7 +77,7 @@ if (isset($_POST["sbbtn"])) {
 
 
 						<div class="col-6 col-12-medium">
-							<form method="post" action="signin.php">
+							<form method="post" action="asignin.php">
 								<div class="row gtr-uniform">
 
 									<div class="col-12">
@@ -105,28 +102,11 @@ if (isset($_POST["sbbtn"])) {
 									<!-- Break -->
 
 									<div class="col-12">
-										<label>Login As :</label>
-										<select name="utype" id="utype" required="">
-											<option value="">- Login As -</option>
-											<option value="Provider">Provider</option>
-											<option value="Consumer">Consumer</option>
-
-										</select>
-									</div>
-									<!-- Break -->
-
-									<div class="col-12">
 										<ul class="actions">
 											<li><input type="submit" name="sbbtn" value="Login" class="primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</div>
-
-									<!-- Break -->
-									<div class="col-12">
-										New User ?&nbsp;&nbsp;<a href="SignUp.php">Sign Up Now!</a>
-									</div>
-
 								</div>
 							</form>
 
@@ -148,7 +128,7 @@ if (isset($_POST["sbbtn"])) {
 		<div id="sidebar">
 			<div class="inner">
 
-				<?php include "menu.php"; ?>
+				<?php include "amenu.php"; ?>
 
 
 			</div>

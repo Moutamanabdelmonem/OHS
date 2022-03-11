@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,14 +22,14 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.php" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="index.php" class="logo"><strong>Simple provider</strong></a>
 									
 								</header>
 
 							<!-- Banner -->
 								<section>
 									<header class="major">
-										<h2>Household Services</h2>
+										<h2>Services</h2>
 									</header>
 									<div class="features">
 										<article>

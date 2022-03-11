@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Online HouseHold Service Portal</title>
+		<title>Simple Provider</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +22,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>Household</strong> Service Portal</a>
+									<a href="index.html" class="logo"><strong>Simple Provider</strong></a>
 									
 								</header>
 
@@ -32,12 +32,19 @@
 										<h2>About Us</h2>
 									</header>
 									
-										<p align="justify">Online Household Service Portal provides Online System in which any interested service provider can register and then log in and view their own service bookings. Service consumer can select the required provider in their local city and feed booking form. This system is developed in Php language using javascript, CSS with MySQL database. 
+									
+									<p align="justify">What is the simple Provider platform? <br>
+										<br>
+
+Simple Provider platform is the best way to complete all your home work, if you are looking for a highly skilled technician, electrician or plumber to solve electrical or plumbing problems Simple Provider platform is the best! We provide you with blacksmithing and construction services, as well as air conditioning maintenance services, including cleaning
+ Any air conditioner, whether split or central air conditioner, paints and wallpaper, carpentry, house cleaning
+
+
+
 										</p>
-										<p align="justify">This online household service portal is very useful for everyone who wants to offer home services because now a day’s everyone wants to save time and shot out their problems within time without any problem, therefore, online household services are very useful for people. There are only two modules present first is service provider and the second one is a service consumer.
+										<p align="justify">The Simple Provider platform allows you to request maintenance and care services for your home from the best service professionals, to choose the most appropriate person to serve you based on an evaluation system and reviews for each service professional and an instant booking system
+ And the best prices and offers
 										</p>
-										<p align="justify"> Service Provider has an important role in the system he can manage all the details, booking, updating services and many more while the service consumer can see a list of home services and book it as per his requirements. The online household service portal consists of many categories  of services.</p>
-										
 									
 								</section>
 
