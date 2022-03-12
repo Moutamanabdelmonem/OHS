@@ -39,6 +39,7 @@ if(isset($_POST["sbbtn"]))
 	if($stmt->affected_rows>0)
 	{
 		$msg="Photo is Updated...";
+		$_SESSION["img"] = $nimgname;
 	}
 	else
 	{

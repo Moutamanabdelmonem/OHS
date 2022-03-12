@@ -23,7 +23,7 @@ header("location:Signin.php");
 				
 				$query="update service_request set status=? where request_no=?";
 				$stmt=$con->prepare($query);
-				$stmt->bind_param("si",$status,$value);
+				$stmt->bind_param("ss",$status,$value);
 				$stmt->execute();
 				$stmt->store_result();
 				if($stmt->affected_rows>0)
@@ -90,9 +90,10 @@ header("location:Signin.php");
 															echo mysqli_connect_error();
 															exit();
 														}
-															$emailid=$_SESSION["emailid"];
-															$query1="select request_no,user_table.first_name,user_table.middle_name,user_table.last_name,user_table.address,user_table.city,user_table.state,user_table.country,user_table.pincode,fdate,tdate,service_name,request_date,request_time,status from service_table,service_request,user_table where user_table.email_id=consumer_emailid and service_table.provider_emailid=service_request.provider_emailid and service_table.service_id=service_request.service_id and service_table.provider_emailid=? order by request_date desc";
+														$emailid=$_SESSION["emailid"];
+														$query1="select request_no,user_table.first_name,user_table.middle_name,user_table.last_name,user_table.address,user_table.city,user_table.state,user_table.country,user_table.pincode,fdate,tdate,service_name,request_date,request_time,status from service_table,service_request,user_table where user_table.email_id=consumer_emailid and service_table.provider_emailid=service_request.provider_emailid and service_table.service_id=service_request.service_id and service_table.provider_emailid=? order by request_date desc";
 														$stmt1=$con->prepare($query1);
+														echo $query1;
 														$stmt1->bind_param("s",$emailid);
 														$stmt1->execute();
 														$stmt1->store_result();

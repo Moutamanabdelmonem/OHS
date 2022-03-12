@@ -9,17 +9,17 @@ if (mysqli_connect_errno() > 0) {
 if (isset($_POST["sbbtn"])) {
 	$emailid = $_POST["emailid"];
 	$pass = $_POST["pass"];
-
+	$status = 'Active';
 	// THE NEW CODE IS HERE
-	if (($emailid == 'admin@admin') && ($pass == 'password')) {
-		header("location:admin.php");
-	}
+	// if (($emailid == 'admin@admin') && ($pass == 'password')) {
+	// 	header("location:admin.php");
+	// }
 	// END
 	
 	$utype = $_POST["utype"];
-	$query = "select first_name,middle_name,last_name,photo,mobile_no from user_table where email_id=? and password=? and Register_As=?";
+	$query = "select first_name,middle_name,last_name,photo,mobile_no from user_table where status=? and email_id=? and password=? and Register_As=?";
 	$stmt = $con->prepare($query);
-	$stmt->bind_param("sss", $emailid, $pass, $utype);
+	$stmt->bind_param("ssss", $status, $emailid, $pass, $utype);
 	$stmt->execute();
 	$stmt->store_result();
 	if ($stmt->num_rows > 0) {

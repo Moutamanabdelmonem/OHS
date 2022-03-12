@@ -13,6 +13,7 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
+										<li><a href="admin.php">Admin Page</a></li>
 										<li><a href="signout.php">Signout</a></li>
 									</ul>
 								</nav>

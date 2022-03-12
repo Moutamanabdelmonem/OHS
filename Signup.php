@@ -31,7 +31,7 @@ if(isset($_POST["sbbtn"]))
 	$imgname=$_FILES["photo"]["name"];
 	$status= "Active";
 	if ($utype=='Consumer') {
-		$vlonteer="";
+		$vlonteer="None";
 	}else {
 		$vlonteer=$_POST["vlonteer"];
 	}

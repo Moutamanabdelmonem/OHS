@@ -35,7 +35,7 @@ if(!isset($_SESSION["utype"]) || $_SESSION["utype"]!="Admin")
 
 							<!-- Banner -->
 								<section>
-										<h2 id="elements">View Request Page</h2>
+										<h2 id="elements">User's Page</h2>
 										<hr class="major" />
 										<div class="row gtr-200">
 											<div class="col-12">
@@ -52,18 +52,18 @@ if(!isset($_SESSION["utype"]) || $_SESSION["utype"]!="Admin")
 															echo mysqli_connect_error();
 															exit();
 														}
-															$query1="select first_name,last_name,mobile_no,email_id,vlonteer,status from user_table order by first_name desc";
+															$query1="select first_name,last_name,mobile_no,email_id,register_as,vlonteer,status from user_table order by first_name desc";
 														$stmt1=$con->prepare($query1);
 									
 														$stmt1->execute();
 														$stmt1->store_result();
 														if($stmt1->num_rows>0)
 														{
-															$stmt1->bind_result($fname,$lname,$mobile,$emailid,$vlonteer,$status);
+															$stmt1->bind_result($fname,$lname,$mobile,$emailid,$register_as,$vlonteer,$status);
 															echo '<table class="alt">
 															<thead>
 																<tr>
-																	<td colspan="6" align="right"><b>No of Request :<b></td>
+																	<td colspan="6" align="right"><b>No of Users :<b></td>
 																	<td><b>'.$stmt1->num_rows.'</b></td>
 																</tr>
 																<tr>
@@ -74,6 +74,7 @@ if(!isset($_SESSION["utype"]) || $_SESSION["utype"]!="Admin")
 																	<th>Name</th>
 																	<th>Mobile</th>
 																	<th>Email</th>
+																	<th>Register As</th>
 																	<th>Volunteer</th>
 																	<th>Status</th>
 																</tr>
@@ -87,9 +88,10 @@ if(!isset($_SESSION["utype"]) || $_SESSION["utype"]!="Admin")
 																	echo '<td>'.$i.'</td>'; 
 																    $i++;
 																
-																	echo '<td>'.'<a href="user.php/?id='.$emailid.'" style="text-decoration:none;">'.strtoupper($fname.' '.$lname).'</a>'.'</td>
+																	echo '<td>'.'<a href="user.php?emailid='.$emailid.'" style="text-decoration:none;">'.strtoupper($fname.' '.$lname).'</a>'.'</td>
 																	<td>'.$mobile.'</td>
 																	<td>'.$emailid.'</td>
+																	<td>'.$register_as.'</td>
 																	<td>'.$vlonteer.'</td>
 																	<td>'.$status.'</td>
 																	</tr>';
