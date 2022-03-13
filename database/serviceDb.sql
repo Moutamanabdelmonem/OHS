@@ -25,7 +25,6 @@ USE `servicedb`;
 
 -- --------------------------------------------------------
 
-
 --
 -- Table structure for table `service_request`
 --
